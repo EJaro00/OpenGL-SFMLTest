@@ -43,6 +43,12 @@
     <None Include="shader.vert">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="lightShader.frag">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="lightShader.vert">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="wall.jpg">
