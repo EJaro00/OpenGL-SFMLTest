@@ -1,9 +1,19 @@
 ﻿  main.cpp
-d:\github\opengl-sfmltest\opengl-sdltest\main.cpp(105): warning C4101: 'texture1': unreferenced local variable
-d:\github\opengl-sfmltest\opengl-sdltest\main.cpp(105): warning C4101: 'texture2': unreferenced local variable
+d:\github\opengl-sfmltest\opengl-sdltest\main.cpp(295): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\github\opengl-sfmltest\opengl-sdltest\main.cpp(296): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\github\opengl-sfmltest\opengl-sdltest\main.cpp(303): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\github\opengl-sfmltest\opengl-sdltest\main.cpp(304): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\github\opengl-sfmltest\opengl-sdltest\main.cpp(311): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\github\opengl-sfmltest\opengl-sdltest\main.cpp(312): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\github\opengl-sfmltest\opengl-sdltest\main.cpp(319): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\github\opengl-sfmltest\opengl-sdltest\main.cpp(320): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\github\opengl-sfmltest\opengl-sdltest\main.cpp(328): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\github\opengl-sfmltest\opengl-sdltest\main.cpp(329): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\github\opengl-sfmltest\opengl-sdltest\main.cpp(129): warning C4101: 'texture1': unreferenced local variable
+d:\github\opengl-sfmltest\opengl-sdltest\main.cpp(129): warning C4101: 'texture2': unreferenced local variable
   Generating code
-  35 of 284 functions (12.3%) were compiled, the rest were copied from previous compilation.
-    4 functions were new in current compilation
-    23 functions had inline decision re-evaluated but remain unchanged
+  1 of 427 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   OpenGL-SDLTest.vcxproj -> D:\Github\OpenGL-SFMLTest\Release\OpenGL-SFMLTest.exe
