@@ -225,16 +225,16 @@ int main()
 		}
 		//handle mouse/keyboard events
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-			camera.ProcessKeyboard(FORWARD, deltaTime);
+			camera.ProcessCameraMovement(FORWARD, deltaTime, 1.0f);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-			camera.ProcessKeyboard(BACKWARD, deltaTime);
+			camera.ProcessCameraMovement(FORWARD, deltaTime, -1.0f);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-			camera.ProcessKeyboard(LEFT, deltaTime);
+			camera.ProcessCameraMovement(RIGHT, deltaTime, -1.0f);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-			camera.ProcessKeyboard(RIGHT, deltaTime);
+			camera.ProcessCameraMovement(RIGHT, deltaTime, 1.0f);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
 			running = false;
@@ -246,11 +246,32 @@ int main()
 		if (window.hasFocus()) {
 			sf::Mouse::setPosition(center, window);
 
-			camera.ProcessMouseMovement((float)(deltaPos.x), (float)(-deltaPos.y));
+			camera.ProcessCameraRotation((float)(deltaPos.x), (float)(-deltaPos.y));
 		}
 
-		lightPos.x = 1.0f + sin(currentFrame) * 2.0f;
-		lightPos.y = sin(currentFrame / 2.0f) * 1.0f;
+		if (sf::Joystick::isConnected(0)) {
+
+			glm::vec2 camOffset(0.0f);
+			camOffset.x = sf::Joystick::getAxisPosition(0, sf::Joystick::Axis::X);
+			camOffset.y = -sf::Joystick::getAxisPosition(0, sf::Joystick::Axis::Y);
+
+			if (glm::length(camOffset) / 100.0f >= 0.1f)
+			{
+				camera.ProcessCameraMovement(camOffset / 100.0f, deltaTime);
+			}
+
+			camOffset = { 0.0f, 0.0f };
+			camOffset.x = sf::Joystick::getAxisPosition(0, sf::Joystick::Axis::U);
+			camOffset.y = sf::Joystick::getAxisPosition(0, sf::Joystick::Axis::V);
+			if (glm::length(camOffset) >= 1.0f)
+			{
+				camera.ProcessCameraRotation(camOffset.x / 10.0f, -camOffset.y / 10.0f);
+			}
+
+		}
+
+		//lightPos.x = 1.0f + sin(currentFrame) * 2.0f;
+		//lightPos.y = sin(currentFrame / 2.0f) * 1.0f;
 		
 		// render
 		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);

@@ -10,8 +10,6 @@
 // Defines several possible options for camera movement. Used as abstraction to stay away from window-system specific input methods
 enum Camera_Movement {
 	FORWARD,
-	BACKWARD,
-	LEFT,
 	RIGHT
 };
 
@@ -66,22 +64,26 @@ public:
 		return glm::lookAt(Position, Position + Front, Up);
 	}
 
-	// processes input received from any keyboard-like input system. Accepts input parameter in the form of camera defined ENUM (to abstract it from windowing systems)
-	void ProcessKeyboard(Camera_Movement direction, float deltaTime)
+	// processes input received from any keyboard-like or joystick-like input system. Accepts input parameter in the form of camera defined ENUM (to abstract it from windowing systems)
+	void ProcessCameraMovement(Camera_Movement axis, float deltaTime, float length)
 	{
-		float velocity = MovementSpeed * deltaTime;
-		if (direction == FORWARD)
+		float velocity = MovementSpeed * deltaTime * length;
+		if (axis == FORWARD)
 			Position += Front * velocity;
-		if (direction == BACKWARD)
-			Position -= Front * velocity;
-		if (direction == LEFT)
-			Position -= Right * velocity;
-		if (direction == RIGHT)
+		if (axis == RIGHT)
 			Position += Right * velocity;
 	}
 
-	// processes input received from a mouse input system. Expects the offset value in both the x and y direction.
-	void ProcessMouseMovement(float xoffset, float yoffset, GLboolean constrainPitch = true)
+	// handles movement with a vector value
+	void ProcessCameraMovement(glm::vec2 offset, float deltaTime)
+	{
+		glm::vec2 velocity = MovementSpeed * offset * deltaTime;
+		Position += Front * velocity.y;
+		Position += Right * velocity.x;
+	}
+
+	// processes input received from a mouse/joystick axis based input system. Expects the offset value in both the x and y direction.
+	void ProcessCameraRotation(float xoffset, float yoffset, GLboolean constrainPitch = true)
 	{
 		xoffset *= MouseSensitivity;
 		yoffset *= MouseSensitivity;
@@ -110,6 +112,28 @@ public:
 			Zoom = 1.0f;
 		if (Zoom > 45.0f)
 			Zoom = 45.0f;
+	}
+
+	// same function as before, but with a vector value instead of 2 scalar values
+	void ProcessCameraRotation(glm::vec2 offset, GLboolean constrainPitch = true)
+	{
+		offset.x *= MouseSensitivity;
+		offset.y *= MouseSensitivity;
+
+		Yaw += offset.x;
+		Pitch += offset.y;
+
+		// make sure that when pitch is out of bounds, screen doesn't get flipped
+		if (constrainPitch)
+		{
+			if (Pitch > 89.0f)
+				Pitch = 89.0f;
+			if (Pitch < -89.0f)
+				Pitch = -89.0f;
+		}
+
+		// update Front, Right and Up Vectors using the updated Euler angles
+		updateCameraVectors();
 	}
 
 private:
