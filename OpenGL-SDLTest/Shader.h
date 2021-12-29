@@ -1,7 +1,7 @@
 #ifndef SHADER_H
 #define SHADER_H
 
-#include <GL/glew.h> // include glad to get all the required OpenGL headers
+#include <GL/glew.h> // include glew to get all the required OpenGL headers
 
 #include <string>
 #include <fstream>
