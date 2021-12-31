@@ -52,11 +52,22 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="shader.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
     <None Include="shader.vert">
       <Filter>Resource Files\Shaders</Filter>
     </None>
+    <None Include="depthShader.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="shader.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="marble.jpg">
+      <Filter>Resource Files\Objects</Filter>
+    </Image>
+    <Image Include="metal.png">
+      <Filter>Resource Files\Objects</Filter>
+    </Image>
   </ItemGroup>
 </Project>
