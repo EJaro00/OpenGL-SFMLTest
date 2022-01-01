@@ -61,6 +61,9 @@
     <None Include="shader.frag">
       <Filter>Resource Files\Shaders</Filter>
     </None>
+    <None Include="stencilShader.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="marble.jpg">

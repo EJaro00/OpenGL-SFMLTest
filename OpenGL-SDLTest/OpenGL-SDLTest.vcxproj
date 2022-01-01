@@ -151,6 +151,7 @@
     <None Include="depthShader.frag" />
     <None Include="shader.frag" />
     <None Include="shader.vert" />
+    <None Include="stencilShader.frag" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="marble.jpg" />
