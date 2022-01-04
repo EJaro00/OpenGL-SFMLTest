@@ -1,8 +1,7 @@
 ﻿  main.cpp
-d:\github\opengl-sfmltest\opengl-sdltest\main.cpp(327): warning C4305: 'initializing': truncation from 'double' to 'float'
   Generating code
-  1 of 431 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  139 of 618 functions (22.5%) were compiled, the rest were copied from previous compilation.
+    136 functions were new in current compilation
+    45 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   OpenGL-SDLTest.vcxproj -> D:\Github\OpenGL-SFMLTest\Release\OpenGL-SFMLTest.exe

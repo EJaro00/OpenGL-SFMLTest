@@ -154,6 +154,7 @@
     <None Include="stencilShader.frag" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="blending_transparent_window.png" />
     <Image Include="marble.jpg" />
     <Image Include="metal.png" />
   </ItemGroup>

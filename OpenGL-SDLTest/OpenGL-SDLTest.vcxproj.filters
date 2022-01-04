@@ -72,5 +72,8 @@
     <Image Include="metal.png">
       <Filter>Resource Files\Objects</Filter>
     </Image>
+    <Image Include="blending_transparent_window.png">
+      <Filter>Resource Files\Objects</Filter>
+    </Image>
   </ItemGroup>
 </Project>
