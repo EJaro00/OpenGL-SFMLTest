@@ -61,18 +61,18 @@
     <None Include="shader.frag">
       <Filter>Resource Files\Shaders</Filter>
     </None>
-    <None Include="stencilShader.frag">
+    <None Include="framebufferShader.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="framebufferShader.frag">
       <Filter>Resource Files\Shaders</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="marble.jpg">
-      <Filter>Resource Files\Objects</Filter>
-    </Image>
     <Image Include="metal.png">
       <Filter>Resource Files\Objects</Filter>
     </Image>
-    <Image Include="blending_transparent_window.png">
+    <Image Include="container.jpg">
       <Filter>Resource Files\Objects</Filter>
     </Image>
   </ItemGroup>

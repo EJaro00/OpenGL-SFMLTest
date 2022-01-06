@@ -149,13 +149,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="depthShader.frag" />
+    <None Include="framebufferShader.frag" />
+    <None Include="framebufferShader.vert" />
     <None Include="shader.frag" />
     <None Include="shader.vert" />
-    <None Include="stencilShader.frag" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="blending_transparent_window.png" />
-    <Image Include="marble.jpg" />
+    <Image Include="container.jpg" />
     <Image Include="metal.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

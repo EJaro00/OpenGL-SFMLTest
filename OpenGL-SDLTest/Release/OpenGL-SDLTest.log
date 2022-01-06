@@ -1,7 +1,7 @@
 ﻿  main.cpp
   Generating code
-  139 of 618 functions (22.5%) were compiled, the rest were copied from previous compilation.
-    136 functions were new in current compilation
-    45 functions had inline decision re-evaluated but remain unchanged
+  0 of 429 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   OpenGL-SDLTest.vcxproj -> D:\Github\OpenGL-SFMLTest\Release\OpenGL-SFMLTest.exe
